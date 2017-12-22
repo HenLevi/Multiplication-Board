@@ -5,8 +5,10 @@ function initALL() {
 }
 
 function selectOption() {
+
     if (($('[value="Decimal"]').is(':checked')) || ($('[value="Binary"]').is(':checked')) || ($('[value="Hex"]').is(':checked')))
         createMultiplicationBoard();
+
 }
 
 //for createMultiplicationBoard 
@@ -43,6 +45,9 @@ function createMultiplicationBoard() {
                 var fParameter = multiplyer[I];
                 var sParameter = multiplyer[i];
                 var result;
+                if (I === i) {
+                    tCell.className = "text_bold";
+                }
                 if ($('[value="Hex"]').is(':checked'))
                     result = convert(parseInt((fParameter).toString(16)), ((sParameter).toString(16)));
                 else if ($('[value="Binary"]').is(':checked'))
@@ -51,6 +56,8 @@ function createMultiplicationBoard() {
                     result = multiplyer[I] * multiplyer[i];
                 }
                 tCell.innerHTML = result;
+                
+                
             }
             tRow.appendChild(tCell);
         }
@@ -61,7 +68,7 @@ function convert(firstP, secondP) {
     var multipale = firstP * secondP;
     var result;
     if ($('[value="Hex"]').is(':checked')) {
-         result = multipale.toString(16);
+        result = multipale.toString(16);
     } else if ($('[value="Binary"]').is(':checked')) {
         result = multipale.toString(2);
     }

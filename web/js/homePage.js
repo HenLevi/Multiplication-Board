@@ -1,7 +1,4 @@
 
-
-
-
 function homePage(){
     $.ajax({
         url: "templates/homePage.html",

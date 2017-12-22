@@ -1,13 +1,4 @@
-h1 {
-    margin:auto;
-    font-size:18px;
-    text-align:center;
-    background:#EEE;
-    border-radius:3px;
-    padding:2px;
-    width:300px;
-    box-shadow: 2px 2px 2px #AAA;
-}
+
 table {
     border-collapse:collapse;
     border:2px solid cadetblue;
@@ -26,39 +17,17 @@ tr,td {
 }
 .bright {
     background:white;
-/*    font-weight:bolder;*/
+    /*    font-weight:bolder;*/
 }
 
 .blue_color {
     background:blue;
-/*    font-weight:bolder;*/
+    /*    font-weight:bolder;*/
 }
 .text_bold {
-  font-weight: bold;
-/*    font-weight:bolder;*/
+    font-weight: bold;
+    /*    font-weight:bolder;*/
 }
 
 
 /*-------------------------------------------------------*/
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-
-/*.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    
-     Position the tooltip 
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    left: 105%;
-}*/
