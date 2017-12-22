@@ -1,6 +1,6 @@
 <div id="page">
     <div class="container pull-left">
-        <h3 class="text-primary" >Select the Matrix_Base: </h3>
+        <h3 class="text-primary" >Select the Matrix_Base and the size: </h3>
         <form name="myform" action="">
             <div><br>
                 <input type="radio" name="group1" value="Decimal" > Decimal<br>
@@ -8,21 +8,24 @@
                 <input type="radio" name="group1" value="Hex"> Hex
             </div>
         </form>
-        <button type="button" class="btn btn-primary" onclick="selectOption()">Matrix Base option</button>
+
+        <button type="button" class="btn btn-primary" onclick="selectOptionAndSize()">Matrix Base option</button>
+        <br><br>
+        <select id="selectBox" onchange="changeFunc(value);" >
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10" selected>10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+        </select>
+        <br><br>
     </div>
-    
-    <!--check-->
-<!--  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">choose
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-    </ul>
-          <button type="button" class="btn btn-primary" onclick="selectSize()">Matrix Base size</button>
-  </div>-->
-   
 </div>
-    
- 

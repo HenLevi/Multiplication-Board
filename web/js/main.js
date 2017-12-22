@@ -2,25 +2,39 @@ window.onload = initALL;
 
 function initALL() {
     homePage();
+//       $('#multiplicationBoard').DataTable();
 }
 
-function selectOption() {
 
-    if (($('[value="Decimal"]').is(':checked')) || ($('[value="Binary"]').is(':checked')) || ($('[value="Hex"]').is(':checked')))
-        createMultiplicationBoard();
 
+function changeFunc($i) {
+    alert($i);
+    createMultiplicationBoard($i);
+}
+
+
+function selectOptionAndSize() {
+    if (($('[value="Decimal"]').is(':checked')) || ($('[value="Binary"]').is(':checked')) || ($('[value="Hex"]').is(':checked'))) {
+        createMultiplicationBoard(10);
+    } else
+        alert("you must choose one option");
 }
 
 //for createMultiplicationBoard 
-function createMultiplicationBoard() {
+function createMultiplicationBoard($i) {
+    console.log("check");
+    console.log($i);
+    var w = $i;
+    console.log(w);
     var multiplicationBoardTable = document.getElementById("multiplicationBoard");
     var tCell, tHead, tRow;
-    var multiplyer = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+    var multiplyer = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15");
 
     tHead = document.createElement("TR");
     multiplicationBoardTable.appendChild(tHead);
 
     for (var i = -1; i < multiplyer.length; i++) {
+
         tCell = document.createElement("TD");
         tCell.className = "dark";
         if (i >= 0) {
@@ -32,7 +46,7 @@ function createMultiplicationBoard() {
         tHead.appendChild(tCell);
     }
 
-    for (var I = 0; I < multiplyer.length; I++) {
+    for (var I = 0; I < w; I++) {
         tRow = document.createElement("TR");
 
         multiplicationBoardTable.appendChild(tRow);
@@ -56,8 +70,6 @@ function createMultiplicationBoard() {
                     result = multiplyer[I] * multiplyer[i];
                 }
                 tCell.innerHTML = result;
-                
-                
             }
             tRow.appendChild(tCell);
         }

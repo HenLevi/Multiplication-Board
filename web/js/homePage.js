@@ -1,5 +1,5 @@
 
-function homePage(){
+function homePage() {
     $.ajax({
         url: "templates/homePage.html",
         type: "GET"
