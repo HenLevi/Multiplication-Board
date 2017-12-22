@@ -28,4 +28,8 @@ tr,td {
     font-weight: bold;
     /*    font-weight:bolder;*/
 }
-/*-------------------------------------------------------*/
+
+.colorOfFibo {
+     background:pink;   /*this color for Fibonacci number*/
+   
+}

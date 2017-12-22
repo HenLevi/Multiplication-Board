@@ -1,19 +1,24 @@
+'use strict';
 window.onload = initALL;
+var multiplicationBoardReload;
 
 function initALL() {
     homePage();
-//       $('#multiplicationBoard').DataTable();
 }
 
-
-
 function changeFunc($i) {
-    alert($i);
+
+    multiplicationBoardReload = $("#multiplicationBoard");
+    multiplicationBoardReload.html("");
     createMultiplicationBoard($i);
 }
 
 
 function selectOptionAndSize() {
+    multiplicationBoardReload = $("#multiplicationBoard");
+    multiplicationBoardReload.html("");
+
+//     $("#multiplicationBoard").data(null);
     if (($('[value="Decimal"]').is(':checked')) || ($('[value="Binary"]').is(':checked')) || ($('[value="Hex"]').is(':checked'))) {
         createMultiplicationBoard(10);
     } else
@@ -33,7 +38,7 @@ function createMultiplicationBoard($i) {
     tHead = document.createElement("TR");
     multiplicationBoardTable.appendChild(tHead);
 
-    for (var i = -1; i < multiplyer.length; i++) {
+    for (var i = -1; i < w; i++) {
 
         tCell = document.createElement("TD");
         tCell.className = "dark";
@@ -50,7 +55,7 @@ function createMultiplicationBoard($i) {
         tRow = document.createElement("TR");
 
         multiplicationBoardTable.appendChild(tRow);
-        for (var i = -1; i < multiplyer.length; i++) {
+        for (var i = -1; i < w; i++) {
             tCell = document.createElement("TD");
             if (i < 0) {
                 tCell.innerHTML = multiplyer[I];
@@ -62,9 +67,9 @@ function createMultiplicationBoard($i) {
                 if (I === i) {
                     tCell.className = "text_bold";
                 }
-                if ($('[value="Hex"]').is(':checked'))
+                if ($('[value="Hex"]').is(':checked')) {
                     result = convert(parseInt((fParameter).toString(16)), ((sParameter).toString(16)));
-                else if ($('[value="Binary"]').is(':checked'))
+                } else if ($('[value="Binary"]').is(':checked'))
                     result = convert(parseInt((fParameter).toString(2)), ((sParameter).toString(2)));
                 else {
                     result = multiplyer[I] * multiplyer[i];
